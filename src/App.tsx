@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
-import { VStack, Text, useToaster, Message } from "rsuite";
+import { VStack, Text } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
-import { cardData } from "./cardData";
 import Header from "./components/Header.tsx";
 import Banner from "./components/Banner.tsx";
 import ProductGrid from "./components/ProductGrid.tsx";
 import Footer from "./components/Footer.tsx";
 import OrderModal from "./components/OrderModal.tsx";
 import ImageViewer from "./components/ImageViewer.tsx";
+import { toast, ToastContainer } from "react-toastify";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,6 @@ const App = () => {
   });
   const [formError, setFormError] = useState({});
   const formRef = useRef<any>(null);
-  const toaster = useToaster();
   const [viewerOpen, setViewerOpen] = useState(false);
   const [viewerImages, setViewerImages] = useState<any[]>([]);
 
@@ -38,20 +37,47 @@ const App = () => {
     setViewerOpen(true);
   };
 
-  const submit = () => {
+  const submit = async () => {
     if (formRef.current) {
       const isValid = formRef.current.check();
       if (!isValid) {
-        toaster.push(
-          <Message type="error">
-            Please fill all required fields correctly.
-          </Message>
-        );
+        toast.error("Please fill all required fields correctly.", {
+          position: "bottom-center",
+          className: "error-toast-container",
+          hideProgressBar: true,
+          autoClose: 3000,
+        });
         return;
       }
     }
+    // Send data to Google Sheets
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyYWy8xm6AjJBZBOGPuJRlOeNVjWieM7m8xZ2bMVsUfTI7hEjyXPt2noiV6b1BRI5HOkA/exec",
+        {
+          method: "POST",
+          mode: "no-cors", // Google Apps Script requires no-cors for public endpoints
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formValue),
+        }
+      );
+    } catch (error) {
+      toast.error("❌ Failed to place order.", {
+        position: "bottom-center",
+        className: "error-toast-container",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
+    }
     setOpen(false);
-    toaster.push(<Message type="success">🎉 Order placed!</Message>);
+    toast.success("🎉 Order placed successfully!", {
+      position: "bottom-center",
+      className: "success-toast-container",
+      hideProgressBar: true,
+      autoClose: 3000,
+    });
   };
 
   return (
@@ -92,6 +118,7 @@ const App = () => {
         images={viewerImages}
         onClose={() => setViewerOpen(false)}
       />
+      <ToastContainer /> {/* <-- Add this line */}
     </VStack>
   );
 };
