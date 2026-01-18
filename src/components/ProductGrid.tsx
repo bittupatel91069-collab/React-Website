@@ -46,6 +46,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
           >
             {p.desc}
           </Text>
+          <Text size={16} weight="medium" color="#2e7d32">
+            ₹{p.price}
+          </Text>
           <Button
             appearance="primary"
             startIcon={<ShoppingCart size={18} />}

@@ -3,6 +3,7 @@ export const cardData = [
     id: 1,
     title: "Cotton T-Shirt Bra",
     desc: "Everyday comfort with smooth finish",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311672/pexels-photo-6311672.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311658/pexels-photo-6311658.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -13,6 +14,7 @@ export const cardData = [
     id: 2,
     title: "Lace Push-Up Bra",
     desc: "Perfect lift with soft lace detailing",
+    price: 599,
     images: [
       "https://images.pexels.com/photos/6311670/pexels-photo-6311670.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311684/pexels-photo-6311684.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -23,6 +25,7 @@ export const cardData = [
     id: 3,
     title: "Seamless Panty",
     desc: "Invisible fit under tight outfits",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311661/pexels-photo-6311661.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311655/pexels-photo-6311655.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -33,6 +36,7 @@ export const cardData = [
     id: 4,
     title: "Full Coverage Bra",
     desc: "Maximum support with breathable fabric",
+    price: 699,
     images: [
       "https://images.pexels.com/photos/6311639/pexels-photo-6311639.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311674/pexels-photo-6311674.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -43,6 +47,7 @@ export const cardData = [
     id: 5,
     title: "Sports Bra",
     desc: "High stretch and support for workouts",
+    price: 599,
     images: [
       "https://images.pexels.com/photos/6311679/pexels-photo-6311679.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757695/pexels-photo-3757695.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -53,6 +58,7 @@ export const cardData = [
     id: 6,
     title: "Lace Bikini Panty",
     desc: "Soft lace trim with a perfect hip fit",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311656/pexels-photo-6311656.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311668/pexels-photo-6311668.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -63,6 +69,7 @@ export const cardData = [
     id: 7,
     title: "Satin Camisole",
     desc: "Elegant satin top for layering",
+    price: 699,
     images: [
       "https://images.pexels.com/photos/6311683/pexels-photo-6311683.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311681/pexels-photo-6311681.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -73,6 +80,7 @@ export const cardData = [
     id: 8,
     title: "Lounge Shorts",
     desc: "Soft & breathable indoor comfort shorts",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/3757698/pexels-photo-3757698.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757696/pexels-photo-3757696.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -83,6 +91,7 @@ export const cardData = [
     id: 9,
     title: "Nightwear Pajama Set",
     desc: "Soft cotton with relaxed fit",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311651/pexels-photo-6311651.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757702/pexels-photo-3757702.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -93,6 +102,7 @@ export const cardData = [
     id: 10,
     title: "Thermal Inner Top",
     desc: "Winter warmth with soft lining",
+    price: 599,
     images: [
       "https://images.pexels.com/photos/6311685/pexels-photo-6311685.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311657/pexels-photo-6311657.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -103,6 +113,7 @@ export const cardData = [
     id: 11,
     title: "Cotton Camisole",
     desc: "Daily wear light inner top",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311664/pexels-photo-6311664.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311659/pexels-photo-6311659.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -113,6 +124,7 @@ export const cardData = [
     id: 12,
     title: "Boyshort Panty",
     desc: "Full hip coverage with soft cotton",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311655/pexels-photo-6311655.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311680/pexels-photo-6311680.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -123,6 +135,7 @@ export const cardData = [
     id: 13,
     title: "Lace Bralette",
     desc: "Stylish comfort with wire-free support",
+    price: 799,
     images: [
       "https://images.pexels.com/photos/6311682/pexels-photo-6311682.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311670/pexels-photo-6311670.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -133,6 +146,7 @@ export const cardData = [
     id: 14,
     title: "Padded Strapless Bra",
     desc: "Stay-up support for off-shoulder outfits",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311677/pexels-photo-6311677.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311681/pexels-photo-6311681.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -143,6 +157,7 @@ export const cardData = [
     id: 15,
     title: "Bridal Lingerie Set",
     desc: "Delicate lace design for special moments",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/3757695/pexels-photo-3757695.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311671/pexels-photo-6311671.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -153,6 +168,7 @@ export const cardData = [
     id: 16,
     title: "Shapewear Bodysuit",
     desc: "Smooth curves under dresses",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311667/pexels-photo-6311667.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757699/pexels-photo-3757699.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -163,6 +179,7 @@ export const cardData = [
     id: 17,
     title: "Thermal Leggings",
     desc: "Soft fleece-lined warm leggings",
+    price: 699,
     images: [
       "https://images.pexels.com/photos/3757697/pexels-photo-3757697.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757704/pexels-photo-3757704.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -173,6 +190,7 @@ export const cardData = [
     id: 18,
     title: "Cycling Shorts",
     desc: "Soft stretch shorts for heavy movement",
+    price: 699,
     images: [
       "https://images.pexels.com/photos/3757710/pexels-photo-3757710.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757711/pexels-photo-3757711.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -183,6 +201,7 @@ export const cardData = [
     id: 19,
     title: "Night Slip Dress",
     desc: "Comfortable silky slip dress",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311654/pexels-photo-6311654.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311676/pexels-photo-6311676.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -193,6 +212,7 @@ export const cardData = [
     id: 20,
     title: "High Waist Panty",
     desc: "Comfort shaping with full coverage",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311679/pexels-photo-6311679.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311636/pexels-photo-6311636.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -203,6 +223,7 @@ export const cardData = [
     id: 21,
     title: "Printed Bikini Set",
     desc: "Fun stylish prints for everyday wear",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/3757706/pexels-photo-3757706.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757708/pexels-photo-3757708.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -213,6 +234,7 @@ export const cardData = [
     id: 22,
     title: "Winter Thermal Set",
     desc: "Full inner suit for cold days",
+    price: 699,
     images: [
       "https://images.pexels.com/photos/3757713/pexels-photo-3757713.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757714/pexels-photo-3757714.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -223,6 +245,7 @@ export const cardData = [
     id: 23,
     title: "Half Slip Skirt",
     desc: "Smooth lining under dresses",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311681/pexels-photo-6311681.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311682/pexels-photo-6311682.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -233,6 +256,7 @@ export const cardData = [
     id: 24,
     title: "Non-Wire Comfort Bra",
     desc: "Wireless soft bra for all day ease",
+    price: 799,
     images: [
       "https://images.pexels.com/photos/6311656/pexels-photo-6311656.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311678/pexels-photo-6311678.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -243,6 +267,7 @@ export const cardData = [
     id: 25,
     title: "Printed Night Gown",
     desc: "Light fabric nighty with floral pattern",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/3757716/pexels-photo-3757716.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/3757717/pexels-photo-3757717.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -253,6 +278,7 @@ export const cardData = [
     id: 26,
     title: "Cotton Slip Dress",
     desc: "Light inner dress for long outfits",
+    price: 499,
     images: [
       "https://images.pexels.com/photos/6311685/pexels-photo-6311685.jpeg?auto=compress&cs=tinysrgb&w=600",
       "https://images.pexels.com/photos/6311686/pexels-photo-6311686.jpeg?auto=compress&cs=tinysrgb&w=600",
