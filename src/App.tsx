@@ -15,6 +15,7 @@ const App = () => {
   const [formValue, setFormValue] = useState<any>({
     name: "",
     email: "",
+    mobile: "",
     address1: "",
     address2: "",
     city: "",
@@ -38,46 +39,27 @@ const App = () => {
   };
 
   const submit = async () => {
-    if (formRef.current) {
-      const isValid = formRef.current.check();
-      if (!isValid) {
-        toast.error("Please fill all required fields correctly.", {
-          position: "bottom-center",
-          className: "error-toast-container",
-          hideProgressBar: true,
-          autoClose: 3000,
-        });
-        return;
+    if (formRef.current && !formRef.current.check()) {
+      toast.error("Please fill all required fields correctly.");
+      return;
+    }
+
+    const body = new URLSearchParams(formValue).toString();
+
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbyX5hZVLQJV_G3gE-MR8ZF807WLuQiJR-2y20DqCkAgf3Z1c-_2LYzxEVMrTMWQB9fpMQ/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body,
       }
-    }
-    // Send data to Google Sheets
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbyYWy8xm6AjJBZBOGPuJRlOeNVjWieM7m8xZ2bMVsUfTI7hEjyXPt2noiV6b1BRI5HOkA/exec",
-        {
-          method: "POST",
-          mode: "no-cors", // Google Apps Script requires no-cors for public endpoints
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formValue),
-        }
-      );
-    } catch (error) {
-      toast.error("❌ Failed to place order.", {
-        position: "bottom-center",
-        className: "error-toast-container",
-        hideProgressBar: true,
-        autoClose: 3000,
-      });
-    }
+    );
+
     setOpen(false);
-    toast.success("🎉 Order placed successfully!", {
-      position: "bottom-center",
-      className: "success-toast-container",
-      hideProgressBar: true,
-      autoClose: 3000,
-    });
+    toast.success("🎉 Order placed successfully!");
   };
 
   return (

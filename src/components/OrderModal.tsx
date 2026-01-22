@@ -15,12 +15,15 @@ const { StringType } = Schema.Types;
 const model = Schema.Model({
   name: StringType().isRequired("Name required"),
   email: StringType().isEmail("Invalid email").isRequired("Email required"),
+  mobile: StringType()
+    .pattern(/^\d{10}$/, "Mobile number must be exactly 10 digits")
+    .isRequired("Mobile number required"),
   address1: StringType().isRequired("Address Line 1 required"),
   address2: StringType(),
   city: StringType().isRequired("City required"),
   state: StringType().isRequired("State required"),
   zip: StringType()
-    .pattern(/^[\d]+$/, "ZIP/Postal code must be numbers only")
+    .pattern(/^\d{6}$/, "ZIP/Postal code must be exactly 6 digits")
     .isRequired("ZIP/Postal code required"),
 });
 
@@ -68,6 +71,16 @@ const OrderModal: React.FC<OrderModalProps> = ({
           <Form.ControlLabel>Email</Form.ControlLabel>
           <Form.Control name="email" placeholder="example@example.com" />
         </Form.Group>
+        <Form.Group controlId="mobile">
+          <Form.ControlLabel>Mobile Number</Form.ControlLabel>
+          <Form.Control
+            name="mobile"
+            placeholder="10-digit mobile number"
+            type="tel"
+            maxLength={10}
+            pattern="\d*"
+          />
+        </Form.Group>
         <VStack spacing={12} style={{ width: "100%" }}>
           <Form.Group controlId="address1">
             <Form.ControlLabel>Address Line 1</Form.ControlLabel>
@@ -99,7 +112,13 @@ const OrderModal: React.FC<OrderModalProps> = ({
           </HStack>
           <Form.Group controlId="zip">
             <Form.ControlLabel>ZIP/Postal Code</Form.ControlLabel>
-            <Form.Control name="zip" />
+            <Form.Control
+              name="zip"
+              placeholder="6-digit postal code"
+              type="tel"
+              maxLength={6}
+              pattern="\d*"
+            />
           </Form.Group>
         </VStack>
       </Form>
