@@ -21,6 +21,8 @@ const App = () => {
     city: "",
     state: "",
     zip: "",
+    product: selected?.title || "",
+    price: selected?.price != null ? `₹${selected.price}` : "-",
   });
   const [formError, setFormError] = useState({});
   const formRef = useRef<any>(null);
@@ -31,6 +33,18 @@ const App = () => {
   // Handlers for product grid and modal
   const buy = (p: any) => {
     setSelected(p);
+    setFormValue({
+      name: "",
+      email: "",
+      mobile: "",
+      address1: "",
+      address2: "",
+      city: "",
+      state: "",
+      zip: "",
+      product: p.title || "",
+      price: p.price != null ? p.price : "",
+    });
     setOpen(true);
   };
 
@@ -47,10 +61,11 @@ const App = () => {
 
     setLoading(true);
     try {
+      console.log("formValue-------->", formValue);
       const body = new URLSearchParams(formValue).toString();
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyX5hZVLQJV_G3gE-MR8ZF807WLuQiJR-2y20DqCkAgf3Z1c-_2LYzxEVMrTMWQB9fpMQ/exec",
+        "https://script.google.com/macros/s/AKfycbztT9I4PjjXLmoJ7PDi6zb80UPFsjwOvMB-GpJZ2kFtdBblRrP34SwwNavWGqWIqKfk/exec",
         {
           method: "POST",
           mode: "no-cors",

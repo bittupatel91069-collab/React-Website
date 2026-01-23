@@ -8,6 +8,7 @@ import {
   Text,
   Schema,
   Message,
+  Tag,
 } from "rsuite";
 
 const { StringType } = Schema.Types;
@@ -52,11 +53,25 @@ const OrderModal: React.FC<OrderModalProps> = ({
   onSubmit,
   loading = false,
 }) => (
-  <Modal open={open} onClose={onClose}>
-    <Modal.Header>
-      <Text as="h4">Order {selected?.title}</Text>
-    </Modal.Header>
+  <Modal open={open} onClose={onClose} size="sm">
     <Modal.Body>
+      {/* Product Name and Price (Read-only) */}
+      <VStack style={{ marginBottom: 6 }}>
+        <HStack spacing={16} alignItems="center">
+          <Text as="span" weight="bold">
+            Product :
+          </Text>
+          <Text as="span">{selected?.title || "-"}</Text>
+        </HStack>
+        <HStack spacing={16} alignItems="center">
+          <Text as="span" weight="bold">
+            Price :
+          </Text>
+          <Tag color="blue" size="md">
+            {selected?.price != null ? `₹${selected.price}` : "-"}
+          </Tag>
+        </HStack>
+      </VStack>
       <Form
         ref={formRef}
         fluid
