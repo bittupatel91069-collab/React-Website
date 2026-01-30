@@ -11,6 +11,18 @@ interface ProductGridProps {
   onImageClick: (images: string[]) => void;
 }
 
+const getDiscountedPrice = (p: any) => {
+  switch (p.id) {
+    case 1:
+      return Math.round(p.price * 0.6); // 0% off
+    case 2:
+      return Math.round(p.price * 0.6); // 60% off
+
+    default:
+      return null; // no discount
+  }
+};
+
 const renderStars = (rating: number) => {
   const full = Math.floor(rating);
   const hasHalf = rating % 1 >= 0.5;
@@ -67,7 +79,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
           style={{ width: "100%", height: 150, objectFit: "cover" }}
           onClick={() => onImageClick(p.images)}
         />
-        <VStack spacing={10} style={{ padding: "14px 10px" }}>
+        <VStack spacing={8} style={{ padding: "14px 10px" }}>
           <Text
             size={15}
             weight="bold"
@@ -81,9 +93,47 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
             align="center"
             style={{ width: "100%" }}
           >
-            <Text size={16} weight="bold" style={{ color: "#6b7280" }}>
-              Rs. {p.price}
-            </Text>
+            {getDiscountedPrice(p) ? (
+              <VStack spacing={2} align="start">
+                {/* 60% OFF label */}
+                <Text size={10}>Pack of 2</Text>
+                <Text
+                  size={11}
+                  weight="bold"
+                  style={{
+                    color: "#16a34a",
+                    background: "#dcfce7",
+                    padding: "2px 6px",
+                    borderRadius: 6,
+                    width: "fit-content",
+                  }}
+                >
+                  {p.id === 1 ? "60% OFF" : p.id === 2 ? "60% OFF" : "70% OFF"}
+                </Text>
+
+                <HStack spacing={6} align="center">
+                  {/* Original price */}
+                  <Text
+                    size={13}
+                    style={{
+                      color: "#9ca3af",
+                      textDecoration: "line-through",
+                    }}
+                  >
+                    ₹{p.price}
+                  </Text>
+
+                  {/* Discounted price */}
+                  <Text size={16} weight="bold" style={{ color: "#111827" }}>
+                    ₹{getDiscountedPrice(p)}
+                  </Text>
+                </HStack>
+              </VStack>
+            ) : (
+              <Text size={16} weight="bold" style={{ color: "#6b7280" }}>
+                ₹{p.price}
+              </Text>
+            )}
 
             <HStack spacing={6}>
               {renderStars(p.rating)}
