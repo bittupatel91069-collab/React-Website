@@ -11,7 +11,7 @@ interface ProductGridProps {
   onImageClick: (images: string[]) => void;
 }
 
-const getDiscountedPrice = (p: any) => {
+export const getDiscountedPrice = (p: any) => {
   switch (p.id) {
     case 1:
       return Math.round(p.price * 0.6); // 0% off

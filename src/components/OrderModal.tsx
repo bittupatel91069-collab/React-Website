@@ -68,7 +68,7 @@ const OrderModal: React.FC<OrderModalProps> = ({
             Price :
           </Text>
           <Tag color="blue" size="md">
-            {selected?.price != null ? `₹${selected.price}` : "-"}
+            {formValue.price != null ? `₹${formValue.price}` : "-"}
           </Tag>
         </HStack>
       </VStack>

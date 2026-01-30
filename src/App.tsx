@@ -3,7 +3,7 @@ import { VStack, Text } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import Header from "./components/Header.tsx";
 import Banner from "./components/Banner.tsx";
-import ProductGrid from "./components/ProductGrid.tsx";
+import ProductGrid, { getDiscountedPrice } from "./components/ProductGrid.tsx";
 import Footer from "./components/Footer.tsx";
 import OrderModal from "./components/OrderModal.tsx";
 import ImageViewer from "./components/ImageViewer.tsx";
@@ -32,6 +32,7 @@ const App = () => {
 
   // Handlers for product grid and modal
   const buy = (p: any) => {
+    const discounted = getDiscountedPrice(p);
     setSelected(p);
     setFormValue({
       name: "",
@@ -43,7 +44,7 @@ const App = () => {
       state: "",
       zip: "",
       product: p.title || "",
-      price: p.price != null ? p.price : "",
+      price: discounted != null ? discounted : p.price,
     });
     setOpen(true);
   };
