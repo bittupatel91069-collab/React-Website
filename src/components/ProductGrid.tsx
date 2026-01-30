@@ -12,15 +12,8 @@ interface ProductGridProps {
 }
 
 export const getDiscountedPrice = (p: any) => {
-  switch (p.id) {
-    case 1:
-      return Math.round(p.price * 0.6); // 0% off
-    case 2:
-      return Math.round(p.price * 0.6); // 60% off
-
-    default:
-      return null; // no discount
-  }
+  if (!p.discount) return p.price;
+  return Math.floor(p.price * (1 - p.discount / 100));
 };
 
 const renderStars = (rating: number) => {
@@ -95,8 +88,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
           >
             {getDiscountedPrice(p) ? (
               <VStack spacing={2} align="start">
-                {/* 60% OFF label */}
                 <Text size={10}>Pack of 2</Text>
+
                 <Text
                   size={11}
                   weight="bold"
@@ -108,11 +101,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
                     width: "fit-content",
                   }}
                 >
-                  {p.id === 1 ? "60% OFF" : p.id === 2 ? "60% OFF" : "70% OFF"}
+                  {p.discount}% OFF
                 </Text>
 
                 <HStack spacing={6} align="center">
-                  {/* Original price */}
                   <Text
                     size={13}
                     style={{
@@ -123,7 +115,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ onOrder, onImageClick }) => (
                     ₹{p.price}
                   </Text>
 
-                  {/* Discounted price */}
                   <Text size={16} weight="bold" style={{ color: "#111827" }}>
                     ₹{getDiscountedPrice(p)}
                   </Text>
