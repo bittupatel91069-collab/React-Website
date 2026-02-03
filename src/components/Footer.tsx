@@ -15,35 +15,60 @@ const Footer = () => (
     }}
   >
     <HStack
-      spacing={50}
-      justifyContent="center"
+      spacing={80}
+      justifyContent="space-between"
+      alignItems="flex-start"
       wrap
       style={{
         width: "100%",
-        maxWidth: 700,
+        padding: "22px 14px",
+        margin: "0 auto",
       }}
     >
-      <VStack spacing={8} alignItems="flex-start" style={{ width: 300 }}>
+      {/* About Us */}
+      <VStack spacing={10} alignItems="flex-start" style={{ width: 300 }}>
         <Text size={18} weight="bold">
-          About Us
+          ✨ About Us
         </Text>
-        <Text size={13} style={{ lineHeight: 1.45 }}>
-          We are a curated innerwear brand delivering premium, soft and
-          comfortable products. Every piece is selected with quality in mind so
-          you feel your best every day.
+        <Text size={13} style={{ lineHeight: 1.6, color: "#4b5563" }}>
+          We are a premium innerwear brand focused on comfort, quality, and
+          confidence. Every piece is thoughtfully designed using soft,
+          breathable fabrics so you feel relaxed and confident every day.
         </Text>
       </VStack>
-      <VStack spacing={8} alignItems="flex-start" style={{ width: 300 }}>
+
+      {/* Contact Us */}
+      <VStack spacing={10} alignItems="flex-start" style={{ width: 260 }}>
         <Text size={18} weight="bold">
-          Contact Us
+          📞 Contact Us
         </Text>
-        <Text size={13} style={{ lineHeight: 1.45 }}>
-          📩 Email: support@company.com <br />
-          📞 Phone: +91 98765 43210 <br />
-          🕒 Mon–Sat: 10 AM – 6 PM
+        <Text size={13} style={{ lineHeight: 1.8, color: "#4b5563" }}>
+          📩 <b>Email:</b> prashant021987@gmail.com <br />
+          📞 <b>Phone:</b> +91 78872 88749 <br />
+          🕒 <b>Hours:</b> Mon–Fri, 10 AM – 5 PM
+        </Text>
+      </VStack>
+
+      {/* Return Policy */}
+      <VStack spacing={10} alignItems="flex-start" style={{ width: 320 }}>
+        <HStack spacing={6} alignItems="center">
+          <Text size={18} weight="bold">
+            🔁 Return Policy
+          </Text>
+          <Text size={8} muted>
+            (T & C Apply)
+          </Text>
+        </HStack>
+
+        <Text size={13} style={{ lineHeight: 1.7, color: "#4b5563" }}>
+          • Exchange will be allowed within 7 days after delivery. <br />
+          • Product should be in original condition with tags. <br />
+          • Intimate wear cannot be returned or exchanged due to hygiene
+          reasons. <br />• For exchange, please contact us via email.
         </Text>
       </VStack>
     </HStack>
+
     <Text size={12} color="#333" style={{ marginTop: 12 }}>
       © {new Date().getFullYear()} COMPANY — All Rights Reserved
     </Text>
