@@ -72,6 +72,29 @@ const OrderModal: React.FC<OrderModalProps> = ({
           </Tag>
         </HStack>
       </VStack>
+      {/* Size Radio Buttons */}
+      <VStack style={{ marginBottom: 16}}>
+        <HStack spacing={16} alignItems="center" >
+         <Text as="span" weight="bold">
+            Size :
+          </Text>
+          <HStack spacing={12} style={{ justifyContent: "center" }}>
+            {["28", "30", "32", "34", "36"].map((sz) => (
+              <label key={sz} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <input
+                  type="radio"
+                  name="size"
+                  value={sz}
+                  checked={formValue.size === sz}
+                  onChange={() => setFormValue({ ...formValue, size: sz })}
+                  required
+                />
+                {sz}
+              </label>
+            ))}
+          </HStack>
+        </HStack>
+      </VStack>
       <Form
         ref={formRef}
         fluid

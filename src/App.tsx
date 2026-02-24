@@ -71,7 +71,7 @@ const App = () => {
       const body = new URLSearchParams(formValue).toString();
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbzEOGM6V739124Uy3a2rSit1TAbf5W-HfD1B4BCqP5cfxUEJfgrrJz0rew0Iu1QcKZKjg/exec",
+        "https://script.google.com/macros/s/AKfycbzZO1KiaWsHHbSUYZg1Ik7LhnwGZHi5G_nyqk6ldnqP4cldqgka_x3g7aUdNOibNMUU/exec",
         {
           method: "POST",
           mode: "no-cors",
